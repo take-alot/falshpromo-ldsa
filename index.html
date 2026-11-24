@@ -1,0 +1,195 @@
+<title>Exclusive Deal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --fg-secondary: #555555;
+    --fg-muted: #999999;
+    --btn-primary: #2186c4;
+    --btn-primary-hover: #1a6fa3;
+    --btn-secondary: #e8e8e8;
+    --btn-secondary-hover: #d8d8d8;
+    --btn-secondary-fg: #333333;
+    --card-bg: #ffffff;
+    --shadow: rgba(0,0,0,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1a1a;
+      --fg: #f0f0f0;
+      --fg-secondary: #c0c0c0;
+      --fg-muted: #888888;
+      --btn-primary: #2186c4;
+      --btn-primary-hover: #2a96d8;
+      --btn-secondary: #333333;
+      --btn-secondary-hover: #444444;
+      --btn-secondary-fg: #e0e0e0;
+      --card-bg: #242424;
+      --shadow: rgba(0,0,0,0.3);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1a1a1a;
+    --fg: #f0f0f0;
+    --fg-secondary: #c0c0c0;
+    --fg-muted: #888888;
+    --btn-primary: #2186c4;
+    --btn-primary-hover: #2a96d8;
+    --btn-secondary: #333333;
+    --btn-secondary-hover: #444444;
+    --btn-secondary-fg: #e0e0e0;
+    --card-bg: #242424;
+    --shadow: rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 24px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 20px var(--shadow);
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding: 48px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .flag {
+    width: 72px;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    margin-bottom: 8px;
+  }
+
+  .flag svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.25;
+    color: var(--fg);
+  }
+
+  .subtitle {
+    color: var(--fg-secondary);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 380px;
+  }
+
+  .question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 8px 0 4px;
+    color: var(--fg);
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 4px;
+  }
+
+  .btn {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn-primary {
+    background: var(--btn-primary);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background: var(--btn-primary-hover);
+  }
+
+  .btn-secondary {
+    background: var(--btn-secondary);
+    color: var(--btn-secondary-fg);
+  }
+
+  .btn-secondary:hover {
+    background: var(--btn-secondary-hover);
+  }
+
+  .notice {
+    color: var(--fg-muted);
+    font-size: 0.8rem;
+    margin: 4px 0 0;
+  }
+</style>
+
+<div class="card">
+  <div class="flag">
+    <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+      <!-- Red top, Blue bottom -->
+      <rect width="900" height="300" fill="#DE3831"/>
+      <rect y="300" width="900" height="300" fill="#002395"/>
+      <!-- White Y outer border -->
+      <polygon points="0,0 420,300 0,600" fill="#FFFFFF"/>
+      <polygon points="420,300 900,230 900,370" fill="#FFFFFF"/>
+      <!-- Green Y band -->
+      <polygon points="0,38 385,300 0,562" fill="#007A4D"/>
+      <polygon points="385,300 900,250 900,350" fill="#007A4D"/>
+      <!-- Gold inner border -->
+      <polygon points="0,100 330,300 0,500" fill="#FFB612"/>
+      <!-- Black triangle -->
+      <polygon points="0,138 295,300 0,462" fill="#000000"/>
+    </svg>
+  </div>
+
+  <h1>Your Exclusive Deal is Waiting</h1>
+
+  <p class="subtitle">This limited-time promotion is reserved for South African residents only. Confirm below to unlock your deal.</p>
+
+  <p class="question">Do you live in South Africa?</p>
+
+  <div class="buttons">
+    <a href="https://take-a-lot.github.io/cleaningreviewssa/" class="btn btn-primary">Yes, Show Me</a>
+    <a href="https://take-a-lot.github.io/cleaningreviewssa/" class="btn btn-secondary">No</a>
+  </div>
+
+  <p class="notice">Limited availability. Offer ends soon.</p>
+</div>
